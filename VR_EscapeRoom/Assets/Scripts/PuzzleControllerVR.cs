@@ -1,18 +1,15 @@
-using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine;
 
 public class PuzzleControllerVR : MonoBehaviour
 {
+    public HingeJoint hingeJoint;
     public XRSocketInteractor socketVermelho;
     public XRSocketInteractor socketAzul;
     public XRSocketInteractor socketLaranja;
-    public GameObject porta;
-    public float tempoDeAbertura = 2.0f;
 
     void Update()
     {
-        // Verifica se todos os bonecos corretos estão nos sockets corretos
         if (VerificaBoneco(socketVermelho, "BonecoVermelho") &&
             VerificaBoneco(socketAzul, "BonecoAzul") &&
             VerificaBoneco(socketLaranja, "BonecoLaranja"))
@@ -33,8 +30,10 @@ public class PuzzleControllerVR : MonoBehaviour
 
     private void AbrirPorta()
     {
-        porta.transform.position += Vector3.up * tempoDeAbertura;
+        JointMotor motor = hingeJoint.motor;
+        motor.targetVelocity = 50; // Ajuste a velocidade conforme necessário
+        hingeJoint.motor = motor;
+        hingeJoint.useMotor = true;
         Debug.Log("Porta aberta! Puzzle resolvido.");
-        this.enabled = false; // Impede múltiplas execuções
     }
 }
