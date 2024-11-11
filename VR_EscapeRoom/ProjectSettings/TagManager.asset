@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Anchor
+  - BonecoVermelho
+  - BonecoLaranja
+  - BonecoAzul
   layers:
   - Default
   - TransparentFX
