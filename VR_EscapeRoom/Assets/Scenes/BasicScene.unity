@@ -634,7 +634,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.5000002, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -5.103118, y: 0.41599807, z: 20.08168}
+  m_ConnectedAnchor: {x: -4.903118, y: 0.41599807, z: 5.54168}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -661,6 +661,7 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+<<<<<<< HEAD
 --- !u!1 &608090075
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,12 +733,19 @@ Transform:
   m_Father: {fileID: 1976520894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &729501875
+=======
+--- !u!114 &541695977
+>>>>>>> f691060c07c289ad94703dac9a3cbf5d5832d203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 729501873}
+=======
+  m_GameObject: {fileID: 541695965}
+>>>>>>> f691060c07c289ad94703dac9a3cbf5d5832d203
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
@@ -853,6 +861,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+<<<<<<< HEAD
 --- !u!54 &729501876
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -953,6 +962,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729501873}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+=======
+>>>>>>> f691060c07c289ad94703dac9a3cbf5d5832d203
 --- !u!1 &756192406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1872,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6199973836754003501, guid: 03363bf476696af44a6b5a5d1229f0a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 541695972}
+    - targetCorrespondingSourceObject: {fileID: 6199973836754003501, guid: 03363bf476696af44a6b5a5d1229f0a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 541695977}
     - targetCorrespondingSourceObject: {fileID: 6199973838152829799, guid: 03363bf476696af44a6b5a5d1229f0a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1499650149}
@@ -1926,9 +1940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 756192407}
-  m_Colliders:
-  - {fileID: 1499650134}
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
@@ -1995,7 +2008,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -2037,11 +2050,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!65 &1499650134 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 6199973837699453557, guid: 03363bf476696af44a6b5a5d1229f0a5, type: 3}
-  m_PrefabInstance: {fileID: 1499650129}
-  m_PrefabAsset: {fileID: 0}
 --- !u!153 &1499650135
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2054,7 +2062,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.99999994, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -4.6350274, y: 0.93670946, z: 5.5167828}
   serializedVersion: 3
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
@@ -2288,8 +2296,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
