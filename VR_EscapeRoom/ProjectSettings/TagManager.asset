@@ -8,6 +8,7 @@ TagManager:
   - BonecoAzul
   - BonecoLaranja
   - BonecoVermelho
+  - Button
   layers:
   - Default
   - TransparentFX
