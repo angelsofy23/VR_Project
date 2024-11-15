@@ -1407,6 +1407,7 @@ GameObject:
   - component: {fileID: 1725495417}
   - component: {fileID: 1725495416}
   - component: {fileID: 1725495421}
+  - component: {fileID: 1725495422}
   m_Layer: 0
   m_Name: PushButton
   m_TagString: Button
@@ -1751,6 +1752,20 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+--- !u!114 &1725495422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725495414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7180078297ab3a84ead792e7eb3fd2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limiteInferior: -0.1
+  limiteSuperior: 0
 --- !u!1001 &2013567946
 PrefabInstance:
   m_ObjectHideFlags: 0
