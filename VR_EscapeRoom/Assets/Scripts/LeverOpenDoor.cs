@@ -12,7 +12,7 @@ public class LeverOpenDoor : MonoBehaviour
     {
         float angle = Mathf.Abs(leverHinge.angle);
 
-        if (angle >= 95 && !doorOpened)
+        if (angle >= 96 && !doorOpened)
         {
             doorAnimator.SetBool("isOpen", true);
 
