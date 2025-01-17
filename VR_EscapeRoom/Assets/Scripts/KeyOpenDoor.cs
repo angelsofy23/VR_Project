@@ -39,7 +39,7 @@ public class KeyOpenDoor : MonoBehaviour
             // Play door opening sound
             if (doorSound != null)
             {
-                doorSound.Play();
+                doorSound?.Play();
             }
 
             // Disable the key after use
