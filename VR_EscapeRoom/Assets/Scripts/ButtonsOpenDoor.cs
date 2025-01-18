@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class ButtonsOpenDoor : MonoBehaviour
 {
@@ -12,9 +13,10 @@ public class ButtonsOpenDoor : MonoBehaviour
     public Animator doorAnimator; // Animator para abrir a porta
     public AudioSource doorSound; // Áudio para abrir a porta
     public int buttonID; // ID único do botão (1, 2, 3)
+    public TextMeshPro sequenceText; // Campo de texto para exibir a sequência
 
     // Sequência correta e sequência atual
-    private static readonly List<int> correctSequence = new List<int> { 1, 1, 1, 2, 2, 3 };
+    private static readonly List<int> correctSequence = new List<int> { 3, 3, 2, 1, 3, 2 };
     private static List<int> currentSequence = new List<int>();
 
     private void Start()
@@ -24,31 +26,35 @@ public class ButtonsOpenDoor : MonoBehaviour
 
     public void OnButtonPress()
     {
-        if (isAnimating) return;
-
-        // Adiciona o ID do botão pressionado à sequência atual
-        currentSequence.Add(buttonID);
-        Debug.Log($"Botão {buttonID} pressionado. Sequência atual: {string.Join(", ", currentSequence)}");
-
-        // Verifica se a sequência está correta até agora
-        if (!IsSequenceCorrect())
-        {
-            Debug.Log("Sequência incorreta! Resetando...");
-            ResetSequence();
-        }
-        else if (currentSequence.Count == correctSequence.Count)
-        {
-            Debug.Log("Sequência correta! Abrindo a porta...");
-            OpenDoor();
-        }
-
         StartCoroutine(ButtonAnimation());
+
+        if(sequenceText.text.Equals("Access Granted")) return;
+
+        // Impede alterações na sequência do keypad caso a sequência correta já tenha sido concluída
+        currentSequence.Add(buttonID);
+        sequenceText.text = string.Join(" ", currentSequence);
+
+        // Verifica a sequência apenas quando o jogador escrever toda
+        if (currentSequence.Count == correctSequence.Count)
+        {
+            if (IsSequenceCorrect())
+            {
+                sequenceText.text = "Access Granted"; // Mensagem de sucesso
+                OpenDoor(); // Abre a porta
+            }
+            else
+            {
+                sequenceText.text = "Access Denied"; // Mensagem de falha
+            }
+
+            ResetSequence(); // Reseta a sequência para uma nova tentativa
+        }
     }
 
     private IEnumerator ButtonAnimation()
     {
         isAnimating = true;
-        Vector3 pressedPosition = originalPosition + Vector3.down * pressDepth;
+        Vector3 pressedPosition = originalPosition + Vector3.right * pressDepth;
 
         // Pressiona o botão para baixo
         float elapsedTime = 0f;
@@ -60,7 +66,7 @@ public class ButtonsOpenDoor : MonoBehaviour
             yield return null;
         }
 
-        // Aguarda (se necessário)
+        // Aguarda
         if (holdDuration > 0)
         {
             yield return new WaitForSeconds(holdDuration);
@@ -82,6 +88,8 @@ public class ButtonsOpenDoor : MonoBehaviour
 
     private bool IsSequenceCorrect()
     {
+        if (currentSequence.Count != correctSequence.Count) return false;
+
         // Verifica se a sequência atual é um prefixo da sequência correta
         for (int i = 0; i < currentSequence.Count; i++)
         {
@@ -100,8 +108,7 @@ public class ButtonsOpenDoor : MonoBehaviour
 
     private void OpenDoor()
     {
-        // Ativa a animação e som da porta (se configurados)
-        if (doorAnimator != null)
+        if (doorAnimator != null && !doorAnimator.GetBool("isOpen"))
         {
             doorAnimator.SetBool("isOpen", true);
 
@@ -115,5 +122,3 @@ public class ButtonsOpenDoor : MonoBehaviour
         }
     }
 }
-
-

@@ -2084,6 +2084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TV_80_pic
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 80d1d86e65f58704795cc2e78a3ef3f2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80d1d86e65f58704795cc2e78a3ef3f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2147,6 +2151,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 80d1d86e65f58704795cc2e78a3ef3f2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 302584399}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 80d1d86e65f58704795cc2e78a3ef3f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 302584403}
   m_SourcePrefab: {fileID: 100100000, guid: 80d1d86e65f58704795cc2e78a3ef3f2, type: 3}
 --- !u!4 &302584397 stripped
 Transform:
@@ -2194,6 +2201,21 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &302584403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302584398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45feaaaca2c960c47be5e57b6b732234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeedX: 16
+  scrollSpeedY: 0.16
+  distanceX: -0.16
 --- !u!1 &319058049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3596,6 +3618,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748222016861356527, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074471628601745017, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -8548,7 +8574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 957363537}
   m_Layer: 0
-  m_Name: Button2
+  m_Name: ButtonsSequence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11138,8 +11164,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 0.10127449, z: 10}
-  m_Center: {x: 0, y: -0.049, z: 0}
+  m_Size: {x: 10, y: 0.09446663, z: 10}
+  m_Center: {x: 0, y: -0.052403983, z: 0}
 --- !u!1001 &1256341765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12129,7 +12155,7 @@ Transform:
   m_GameObject: {fileID: 1351274466}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.0306, y: 0, z: -0.10089992}
+  m_LocalPosition: {x: -0.03399985, y: 0, z: -0.10089992}
   m_LocalScale: {x: 0.0854, y: 0.030499998, z: 0.08539999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12148,12 +12174,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAnimating: 0
-  pressDepth: 0.03
+  pressDepth: 0.025
   pressSpeed: 0.3
   holdDuration: 0
   doorAnimator: {fileID: 1702610910}
   doorSound: {fileID: 1702610915}
   buttonID: 3
+  sequenceText: {fileID: 1495504264}
 --- !u!114 &1351274469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12622,7 +12649,7 @@ Transform:
   m_GameObject: {fileID: 1357855828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.0306, y: 0, z: 0.109}
+  m_LocalPosition: {x: -0.034, y: 0, z: 0.109}
   m_LocalScale: {x: 0.0854, y: 0.030499998, z: 0.08539999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12641,12 +12668,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAnimating: 0
-  pressDepth: 0.03
+  pressDepth: 0.025
   pressSpeed: 0.3
   holdDuration: 0
   doorAnimator: {fileID: 1702610910}
   doorSound: {fileID: 1702610915}
   buttonID: 1
+  sequenceText: {fileID: 1495504264}
 --- !u!114 &1357855831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14192,7 +14220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sample text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14219,14 +14247,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 33
+  m_fontSizeBase: 33
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -14255,7 +14283,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.09824276, w: 0}
+  m_margin: {x: -3.8757706, y: 0, z: -3.0874434, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -16429,7 +16457,7 @@ Transform:
   m_GameObject: {fileID: 1738902565}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.0306, y: 0, z: 0.0045}
+  m_LocalPosition: {x: -0.03399985, y: 0, z: 0.0045}
   m_LocalScale: {x: 0.0854, y: 0.030499998, z: 0.08539999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16448,12 +16476,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAnimating: 0
-  pressDepth: 0.03
+  pressDepth: 0.025
   pressSpeed: 0.3
   holdDuration: 0
   doorAnimator: {fileID: 1702610910}
   doorSound: {fileID: 1702610915}
   buttonID: 2
+  sequenceText: {fileID: 1495504264}
 --- !u!114 &1738902568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17997,7 +18026,7 @@ Transform:
   m_GameObject: {fileID: 1855511762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.27072495, w: 0.96265674}
-  m_LocalPosition: {x: 0.572, y: 0.682, z: -2.645}
+  m_LocalPosition: {x: 0.5654, y: 0.6638, z: -2.645}
   m_LocalScale: {x: 0.022806542, y: 0.2356676, z: 0.022806544}
   m_ConstrainProportionsScale: 0
   m_Children:
