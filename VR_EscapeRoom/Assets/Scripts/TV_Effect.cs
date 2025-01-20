@@ -16,12 +16,9 @@ public class TV_Effect : MonoBehaviour
             // Encontre o material chamado "YourPic"
             foreach (Material mat in materials)
             {
-                Debug.Log("Material: " + mat.name);
-
                 if (mat.name.Contains("YourPic"))
                 {
                     yourPicMaterial = mat;
-                    Debug.Log("Material encontrado: " + mat.name);
                     break;
                 }
             }

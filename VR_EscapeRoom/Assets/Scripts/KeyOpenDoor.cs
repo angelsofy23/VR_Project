@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyOpenDoor : MonoBehaviour
+public class KeyOpenChess : MonoBehaviour
 {
     // Reference to the door GameObject that this key can open
     public GameObject doorToOpen;
