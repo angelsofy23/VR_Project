@@ -5742,7 +5742,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecondFloor.001
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9143376978857214497, guid: 33cedb66fbb4b084a91eec7236aebee8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
