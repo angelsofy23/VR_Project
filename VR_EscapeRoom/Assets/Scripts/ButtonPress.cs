@@ -10,7 +10,7 @@ public class ButtonPress : MonoBehaviour
     [SerializeField] private float pressSpeed = 0.5f;
     [SerializeField] private float holdDuration = 0.0f;
     public Animator doorAnimator;
-    public AudioSource doorSound; // Added audio source reference
+    public AudioSource doorSound; 
     private void Start()
     {
         originalPosition = transform.localPosition;
@@ -35,7 +35,6 @@ public class ButtonPress : MonoBehaviour
         isAnimating = true;
         Vector3 pressedPosition = originalPosition + Vector3.down * pressDepth;
 
-        // Press down
         float elapsedTime = 0f;
         while (elapsedTime < pressSpeed)
         {
@@ -45,13 +44,11 @@ public class ButtonPress : MonoBehaviour
             yield return null;
         }
 
-        // Hold
         if (holdDuration > 0)
         {
             yield return new WaitForSeconds(holdDuration);
         }
 
-        // Return to original position
         elapsedTime = 0f;
         while (elapsedTime < pressSpeed)
         {

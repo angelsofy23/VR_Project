@@ -35,7 +35,6 @@ public class ObjectsPosition : MonoBehaviour
 
     bool PuzzleSolved()
     {
-        // Add null checks and array length validation
         if (_objectsToPlace == null || _places == null || _objectsToPlace.Length != _places.Length)
         {
             return false;
