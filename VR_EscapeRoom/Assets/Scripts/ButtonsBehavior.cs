@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,13 +15,11 @@ public class ButtonsBehavior : MonoBehaviour
         
     }
 
-    // Function to load and start the game scene
     public void StartGame()
     {
         SceneManager.LoadScene("GameScene");
     }
 
-    // Function to quit the application
     public void QuitGame()
     {
         Application.Quit();
